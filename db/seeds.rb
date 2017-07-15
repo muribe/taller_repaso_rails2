@@ -8,6 +8,7 @@
 
 
 Category.destroy_all
+Product.destroy_all
 
 c1 = Category.create(name: 'Computacion')
 c1.products.create(name: 'Hp 2030',price:'199999')
