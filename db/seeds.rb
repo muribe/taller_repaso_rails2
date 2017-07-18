@@ -10,20 +10,20 @@
 Category.destroy_all
 Product.destroy_all
 
-c1 = Category.create!(name: 'Computacion')
+c1 = Category.create!(name: 'Computacion', descuento: 20)
 c1.products.create!(name: 'Hp 2030',price:'199999')
 c1.products.create!(name: 'Hp 2730',price:'399999')
 
-category = Category.create!(name: 'Electro')
+category = Category.create!(name: 'Electro', descuento: 80)
 category.products.create!(name: 'LG 2222',price:'1999999')
 category.products.create!(name: 'Samsung w3421',price:'299999')
 
 
-category = Category.create!(name: 'Telefonia')
+category = Category.create!(name: 'Telefonia', descuento: 50)
 p = category.products.create!(name: 'Lg G6',price:'799999')
 p.categories << c1
 p = category.products.create!(name: 'Samsung S8',price:'799999')
-p.destroy
+# p.destroy
 
 Product.last().update(premium: true)
 
